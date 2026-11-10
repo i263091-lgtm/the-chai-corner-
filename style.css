@@ -1,133 +1,358 @@
-/* 
-Name: Haad Harris
-Roll Number: 26i-3091
-Section: Se-B
+/*
+  The Chai Corner
+  Student: Haad Harris | Roll No: 26i-3091 | Section: SE-B
+  Lab 12: Multi-page website expansion of the original Lab 11 design.
 */
 
+:root {
+    --cream: #F5E6CC;
+    --chai-brown: #805334;
+    --dark-brown: #4B3025;
+    --white: #FFFFFF;
+    --soft-cream: #FFF9F0;
+    --muted: #806B5D;
+    --shadow: 0 8px 24px rgba(75, 48, 37, 0.10);
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
 body {
-    background-color: #F5E6CC;
-    color: #4B3025;
+    background-color: var(--cream);
+    color: var(--dark-brown);
     font-family: Arial, sans-serif;
-    margin: 20px;
+    margin: 0;
+    line-height: 1.6;
 }
 
+img { max-width: 100%; display: block; }
 
+a { color: inherit; }
 
-header {
-    background-color: #805334;
+.site-header {
+    background-color: var(--chai-brown);
     color: white;
-    padding: 20px;
+    padding: 18px 5%;
     text-align: center;
-    border-radius: 10px;
+    border-radius: 0 0 14px 14px;
+    box-shadow: 0 4px 14px rgba(75, 48, 37, 0.12);
 }
 
-nav {
-    margin-top: 10px;
-    font-size: 16px;
+.brand {
+    margin: 0;
+    font-size: clamp(1.7rem, 4vw, 2.25rem);
+    letter-spacing: 0.3px;
 }
 
+.tagline {
+    margin: 3px 0 13px;
+    color: #F8EBDD;
+    font-size: 0.95rem;
+}
 
+.nav-wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.site-nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.site-nav a {
+    color: white;
+    text-decoration: none;
+    padding: 9px 17px;
+    border-radius: 22px;
+    font-size: 0.98rem;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.site-nav a:hover,
+.site-nav a[aria-current="page"] {
+    background-color: var(--cream);
+    color: var(--dark-brown);
+}
+
+.nav-toggle {
+    display: none;
+    background: transparent;
+    border: 1px solid rgba(255,255,255,.65);
+    color: white;
+    border-radius: 8px;
+    padding: 8px 12px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+main {
+    width: min(1120px, 90%);
+    margin: 0 auto;
+    min-height: 65vh;
+}
 
 .welcome {
     text-align: center;
-    padding: 20px;
+    padding: clamp(22px, 4vw, 42px);
     background-color: white;
-    margin-top: 20px;
-    border-radius: 10px;
+    margin-top: 28px;
+    border-radius: 14px;
+    box-shadow: var(--shadow);
+}
+
+.welcome h2, .section-heading {
+    color: var(--chai-brown);
 }
 
 .welcome h2 {
-    color: #805334;
+    margin: 0 0 8px;
+    font-size: clamp(1.5rem, 3vw, 2rem);
 }
 
-.welcome img {
-    width: 300px;
-    height: 180px;
-    object-fit: cover;
-    border-radius: 10px;
+.welcome p {
+    max-width: 650px;
+    margin: 0 auto 20px;
 }
 
+.hero-image {
+    width: min(360px, 100%);
+    height: 260px;
+    object-fit: contain;
+    margin: 20px auto 0;
+    border-radius: 12px;
+    background: var(--soft-cream);
+}
 
+.eyebrow {
+    color: var(--chai-brown);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 0.78rem;
+    font-weight: bold;
+    margin-bottom: 7px;
+}
 
-.menu-heading {
+.section {
+    padding: 34px 0 8px;
+}
+
+.section-heading {
     text-align: center;
-    color: #805334;
-    margin-top: 30px;
+    margin: 0 0 20px;
+    font-size: clamp(1.45rem, 3vw, 1.9rem);
 }
 
 .menu {
     display: flex;
     justify-content: space-around;
+    align-items: stretch;
     gap: 20px;
 }
 
 .menu-card {
     background-color: white;
-    padding: 20px;
-    width: 45%;
-    border-radius: 10px;
-    border: 2px solid #805334;
+    padding: 22px;
+    flex: 1 1 280px;
+    border-radius: 12px;
+    border: 2px solid var(--chai-brown);
+    box-shadow: var(--shadow);
 }
 
 .menu-card h3 {
     text-align: center;
-    color: #805334;
+    color: var(--chai-brown);
+    margin-top: 0;
 }
 
-.menu-card li {
-    padding: 5px;
+.menu-card li { padding: 5px 0; }
+
+.feature-grid, .gallery-grid, .menu-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
 }
 
+.feature-card, .gallery-card, .dish-card {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    border: 1px solid rgba(128, 83, 52, .22);
+}
 
+.feature-card { padding: 22px; text-align: center; }
+.feature-card h3, .dish-card h3, .gallery-card h3 { color: var(--chai-brown); }
+.feature-icon {
+    font-size: 2.4rem;
+    width: 76px;
+    height: 76px;
+    display: grid;
+    place-items: center;
+    margin: 0 auto 10px;
+    background: var(--soft-cream);
+    border-radius: 50%;
+}
 
 table {
     width: 100%;
     border-collapse: collapse;
     background-color: white;
     margin-top: 20px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
 }
 
 th, td {
-    border: 1px solid #805334;
+    border: 1px solid var(--chai-brown);
     padding: 12px;
     text-align: center;
 }
 
 th {
-    background-color: #805334;
+    background-color: var(--chai-brown);
     color: white;
 }
 
-
+tbody tr:nth-child(even) { background: var(--soft-cream); }
 
 .order {
     text-align: center;
     background-color: white;
-    padding: 20px;
-    margin-top: 30px;
-    border-radius: 10px;
+    padding: 26px 20px;
+    margin: 32px 0;
+    border-radius: 14px;
+    box-shadow: var(--shadow);
 }
 
-button {
-    background-color: #805334;
+button, .button-link {
+    background-color: var(--chai-brown);
     color: white;
-    padding: 12px 30px;
+    padding: 12px 28px;
     border: none;
-    border-radius: 20px;
-    font-size: 16px;
+    border-radius: 22px;
+    font-size: 1rem;
     cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    transition: background-color .2s ease, transform .2s ease;
 }
 
-button:hover {
-    background-color: #4B3025;
+button:hover, .button-link:hover {
+    background-color: var(--dark-brown);
+    transform: translateY(-2px);
 }
 
+.page-intro {
+    text-align: center;
+    padding: 34px 0 12px;
+}
 
+.page-intro h2 {
+    color: var(--chai-brown);
+    margin: 0 0 8px;
+    font-size: clamp(1.6rem, 3vw, 2.1rem);
+}
+
+.dish-card { padding: 20px; }
+.dish-card p { margin-bottom: 0; }
+.price {
+    color: var(--chai-brown);
+    font-weight: bold;
+    font-size: 1.05rem;
+}
+.dish-icon {
+    background: var(--soft-cream);
+    border-radius: 10px;
+    padding: 15px;
+    text-align: center;
+    font-size: 2rem;
+}
+
+.gallery-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: contain;
+    background: var(--soft-cream);
+    padding: 10px;
+}
+.gallery-card .gallery-caption { padding: 2px 18px 16px; }
+.gallery-card h3 { margin-bottom: 4px; }
+.gallery-note {
+    text-align: center;
+    color: var(--muted);
+    margin: 18px 0 30px;
+    font-size: .92rem;
+}
 
 footer {
     text-align: center;
-    margin-top: 30px;
-    padding: 10px;
-    background-color: #805334;
+    margin-top: 38px;
+    padding: 18px 12px;
+    background-color: var(--chai-brown);
     color: white;
 }
+footer p { margin: 4px 0; }
+footer .student-details { font-size: .85rem; color: #F8EBDD; }
+
+@media (max-width: 760px) {
+    main { width: min(92%, 600px); }
+    .menu { flex-direction: column; }
+    .feature-grid, .gallery-grid, .menu-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (max-width: 560px) {
+    .site-header { padding: 16px 4%; }
+    .nav-wrap { justify-content: space-between; flex-wrap: wrap; }
+    .nav-toggle { display: inline-block; }
+    .site-nav {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        gap: 3px;
+        padding-top: 10px;
+    }
+    .site-nav.is-open { display: flex; }
+    .site-nav a { width: 100%; }
+    .feature-grid, .gallery-grid, .menu-grid { grid-template-columns: 1fr; }
+    .welcome { margin-top: 18px; }
+    table { font-size: .88rem; }
+    th, td { padding: 9px 6px; }
+}
+
+
+/* Contact page additions — keeps the original Lab 11 palette */
+.contact-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
+.contact-card {
+    background: white; border: 2px solid var(--chai-brown); border-radius: 12px;
+    padding: 22px 18px; text-align: center; box-shadow: var(--shadow);
+}
+.contact-card h3 { color: var(--chai-brown); margin: 8px 0; }
+.contact-card p { margin: 5px 0; }
+.contact-card a { color: var(--chai-brown); font-weight: bold; text-decoration: none; }
+.contact-card a:hover { text-decoration: underline; }
+.placeholder-note { color: var(--muted); font-size: .84rem; margin-top: 12px !important; }
+.contact-form-section {
+    background: white; border-radius: 14px; padding: clamp(22px, 4vw, 38px);
+    margin: 30px 0; box-shadow: var(--shadow);
+}
+.form-heading { text-align: center; }
+.form-heading p:last-child { color: var(--muted); }
+.contact-form { width: min(100%, 680px); margin: 22px auto 0; }
+.form-field { margin-bottom: 17px; }
+.form-field label { display: block; color: var(--chai-brown); font-weight: bold; margin-bottom: 7px; }
+.form-field input, .form-field textarea {
+    width: 100%; padding: 12px 14px; border: 1px solid #B99A82; border-radius: 8px;
+    background: var(--soft-cream); color: var(--dark-brown); font: inherit;
+}
+.form-field input:focus, .form-field textarea:focus { outline: 2px solid var(--chai-brown); outline-offset: 2px; }
+.form-field textarea { resize: vertical; min-height: 130px; }
+.form-feedback { color: var(--chai-brown); font-weight: bold; min-height: 1.5em; }
+@media (max-width: 760px) { .contact-grid { grid-template-columns: 1fr; } }

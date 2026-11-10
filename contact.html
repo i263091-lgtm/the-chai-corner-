@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Contact The Chai Corner.">
+  <title>Contact | The Chai Corner</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <h1 class="brand">☕ The Chai Corner</h1>
+    <p class="tagline">Your perfect place for chai and snacks</p>
+    <div class="nav-wrap">
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="main-navigation">☰ Menu</button>
+      <nav class="site-nav" id="main-navigation" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="menu.html">Menu</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="contact.html" aria-current="page">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-intro">
+      <p class="eyebrow">We would love to hear from you</p>
+      <h2>Contact Us</h2>
+      <p>Have a question? Get in touch with The Chai Corner.</p>
+    </section>
+
+    <section class="contact-grid section" aria-label="Cafe contact information">
+      <article class="contact-card">
+        <div class="feature-icon" aria-hidden="true">📍</div>
+        <h3>Cafe Address</h3>
+        <p>123 Main Market Road</p>
+        <p>Islamabad, Pakistan</p>
+        <p class="placeholder-note">Placeholder address — replace with your actual address.</p>
+      </article>
+      <article class="contact-card">
+        <div class="feature-icon" aria-hidden="true">📞</div>
+        <h3>Contact Number</h3>
+        <p><a href="tel:+920000000000">+92 000 0000000</a></p>
+        <p class="placeholder-note">Placeholder number — replace before publishing.</p>
+      </article>
+      <article class="contact-card">
+        <div class="feature-icon" aria-hidden="true">🕒</div>
+        <h3>Opening Hours</h3>
+        <p>Monday – Sunday</p>
+        <p>10:00 AM – 11:00 PM</p>
+        <p class="placeholder-note">Sample opening hours.</p>
+      </article>
+    </section>
+
+    <section class="contact-form-section">
+      <div class="form-heading">
+        <p class="eyebrow">Send us a message</p>
+        <h2 class="section-heading">Contact Form</h2>
+        <p>Fill in the details below and let us know how we can help.</p>
+      </div>
+      <form class="contact-form" id="contact-form">
+        <div class="form-field">
+          <label for="visitor-name">Your Name</label>
+          <input type="text" id="visitor-name" name="name" placeholder="Enter your name" required>
+        </div>
+        <div class="form-field">
+          <label for="visitor-email">Email Address</label>
+          <input type="email" id="visitor-email" name="email" placeholder="Enter your email address" required>
+        </div>
+        <div class="form-field">
+          <label for="visitor-subject">Subject</label>
+          <input type="text" id="visitor-subject" name="subject" placeholder="What is your message about?" required>
+        </div>
+        <div class="form-field">
+          <label for="visitor-message">Your Message</label>
+          <textarea id="visitor-message" name="message" rows="5" placeholder="Write your message here..." required></textarea>
+        </div>
+        <button type="submit">SEND MESSAGE</button>
+        <p class="form-feedback" id="form-feedback" role="status" aria-live="polite"></p>
+        <p class="placeholder-note">Demo form only: messages are not sent or stored. A backend or form service is needed for real submissions.</p>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2026 The Chai Corner. All rights reserved.</p>
+    <p class="student-details">Designed by Haad Harris | Roll No: 26i-3091 | Section: SE-B</p>
+  </footer>
+</body>
+</html>
